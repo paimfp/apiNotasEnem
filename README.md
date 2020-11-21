@@ -17,7 +17,7 @@ Anos disponíveis:
 
 ### UMA ESCOLA
 Para acessar dados de uma única escola, use o código INEP no endpoint:  
-**GET** ```https://mediasenem-com-br.umbler.net/apiNotasEnem/```{**ano**} ```/``` **[codInep]**
+**GET** ```https://mediasenem-com-br.umbler.net/apiNotasEnem/```[**ano**] ```/``` **[codInep]**
 
 **Resposta com sucesso**
 ```
@@ -55,8 +55,8 @@ Para acessar dados de uma única escola, use o código INEP no endpoint:
 ```
 
 ### TODAS ESCOLAS DE UM ESTADO
-Para acessar os dados de todas as escolas de um estado, use:
-**GET** ```https://mediasenem-com-br.umbler.net/apiNotasEnem/```{**ano**} ```/estado/``` **[codInep]**
+Para acessar os dados de todas as escolas de um estado, use:  
+**GET** ```https://mediasenem-com-br.umbler.net/apiNotasEnem/```[**ano**] ```/estado/``` **[codInep]**
 
 **Resposta com sucesso**
 ```
