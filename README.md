@@ -1,10 +1,23 @@
 # apiNotasEnem
 
 ## Endpoints
+Existem endpoints para acesso aos dados de uma só escola(pelo Código INEP) e para acessar uma lista com os dados de todas as escolas de um estado(pela sigla do estado).
+Anos disponíveis:
+- [x] 2019
+- [ ] 2018
+- [ ] 2017
+- [ ] 2016
+- [ ] 2015
+- [ ] 2014
+- [ ] 2013
+- [ ] 2012
+- [ ] 2011
+- [ ] 2010
+- [ ] 2009
 
 ### UMA ESCOLA
 Para acessar dados de uma única escola, use o código INEP no endpoint:  
-**GET** ```https://mediasenem-com-br.umbler.net/apiNotasEnem/2019/``` **[codInep]**
+**GET** ```https://mediasenem-com-br.umbler.net/apiNotasEnem/```{**ano**} ```/``` **[codInep]**
 
 **Resposta com sucesso**
 ```
@@ -42,8 +55,8 @@ Para acessar dados de uma única escola, use o código INEP no endpoint:
 ```
 
 ### TODAS ESCOLAS DE UM ESTADO
-Para acessar os dados de todas as escolas de um estado, dê um GET em:
-```https://mediasenem-com-br.umbler.net/apiNotasEnem/2019/estado/``` **[siglaEstado]**
+Para acessar os dados de todas as escolas de um estado, use:
+**GET** ```https://mediasenem-com-br.umbler.net/apiNotasEnem/```{**ano**} ```/estado/``` **[codInep]**
 
 **Resposta com sucesso**
 ```
