@@ -2,18 +2,18 @@
 
 ## Endpoints
 Existem endpoints para acesso aos dados de uma só escola(pelo Código INEP) e para acessar uma lista com os dados de todas as escolas de um estado(pela sigla do estado).
-Anos disponíveis:
-- [x] 2019
-- [ ] 2018
-- [ ] 2017
-- [ ] 2016
-- [ ] 2015
-- [ ] 2014
-- [ ] 2013
-- [ ] 2012
-- [ ] 2011
-- [ ] 2010
-- [ ] 2009
+Anos disponíveis:  
+✔ 2019  
+✔ 2018  
+✔ 2017  
+✔ 2016  
+✔ 2015  
+✔ 2014  
+❌ 2013  
+❌ 2012  
+❌ 2011  
+❌ 2010  
+❌ 2009  
 
 ### UMA ESCOLA
 Para acessar dados de uma única escola, use o código INEP no endpoint:  
