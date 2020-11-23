@@ -16,21 +16,29 @@ app.set("json spaces", 2);
 app.get("/apiNotasEnem/:ano/estado/:estado", async (req, res) => {
   try {
     const db = app.locals.db;
-    const { estado, ano } = req.params;
+    const estado = req.params.estado.toUpperCase();
+    const ano = req.params.ano;
     if (listaEstados.includes(estado)) {
       const cursor = await db
         .collection(ano)
         .find({ estado }, { projection: { _id: 0 } });
-      const escolas = await cursor.toArray();
-      const data = {
-        encontrado: true,
-        ano,
-        estado,
-        registros: escolas.length,
-        escolas,
-        mensagem: mensagemFiltro,
-      };
-      res.send(data);
+      if (await cursor.count()) {
+        const escolas = await cursor.toArray();
+        const data = {
+          encontrado: true,
+          ano,
+          estado,
+          registros: escolas.length,
+          escolas,
+          mensagem: mensagemFiltro,
+        };
+        res.send(data);
+      } else {
+        res.send({
+          encontrado: false,
+          mensagem: "Nenhum registro encontrado para o ano selecionado",
+        });
+      }
     } else {
       res.send({
         encontrado: false,
@@ -47,14 +55,12 @@ app.get("/apiNotasEnem/:ano/estado/:estado", async (req, res) => {
 app.get("/apiNotasEnem/:ano/:codInep", async (req, res) => {
   try {
     const db = app.locals.db;
-    const codInep = +req.params.codInep;
-    const { ano } = req.params;
+    const codInep = parseInt(req.params.codInep);
+    const ano = req.params.ano;
     if (codInep) {
-      console.log(typeof codInep, typeof ano);
       await db
         .collection(ano)
         .findOne({ codInep }, { projection: { _id: 0 } }, (err, data) => {
-          console.log(data);
           if (data) {
             data = {
               encontrado: true,
