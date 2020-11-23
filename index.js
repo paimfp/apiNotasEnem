@@ -2,7 +2,20 @@ import express from "express";
 import cors from "cors";
 import mongo from "mongodb";
 import dotenv from "dotenv";
+import winston from "winston";
 import { listaEstados, mensagemFiltro } from "./helpers.js";
+
+// Gera um logger de acesso formatado
+const logger = (() => {
+  const { combine, timestamp, printf } = winston.format;
+  const myFormat = printf(({ level, message, timestamp }) => {
+    return `${timestamp} ${level}: ${message}`;
+  });
+  return winston.createLogger({
+    format: combine(timestamp(), myFormat),
+    transports: [new winston.transports.File({ filename: "log.log" })],
+  });
+})();
 
 dotenv.config();
 const MONGO_URL = process.env.MONGO_URL;
@@ -18,6 +31,7 @@ app.get("/apiNotasEnem/:ano/estado/:estado", async (req, res) => {
     const db = app.locals.db;
     const estado = req.params.estado.toUpperCase();
     const ano = req.params.ano;
+    logger.info(`GET estado ${estado} em ${ano}`);
     if (listaEstados.includes(estado)) {
       const cursor = await db
         .collection(ano)
@@ -57,6 +71,7 @@ app.get("/apiNotasEnem/:ano/:codInep", async (req, res) => {
     const db = app.locals.db;
     const codInep = parseInt(req.params.codInep);
     const ano = req.params.ano;
+    logger.info(`GET escola ${codInep} em ${ano}`);
     if (codInep) {
       await db
         .collection(ano)
