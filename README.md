@@ -56,7 +56,7 @@ Para acessar dados de uma única escola, use o código INEP no endpoint:
 
 ### TODAS ESCOLAS DE UM ESTADO
 Para acessar os dados de todas as escolas de um estado, use:  
-**GET** ```https://mediasenem-com-br.umbler.net/apiNotasEnem/```[**ano**] ```/estado/``` **[codInep]**
+**GET** ```https://mediasenem-com-br.umbler.net/apiNotasEnem/```[**ano**] ```/estado/``` **[siglaEstado]**
 
 **Resposta com sucesso**
 ```
