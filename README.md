@@ -9,11 +9,11 @@ Anos disponíveis:
 ✔ 2016  
 ✔ 2015  
 ✔ 2014  
-❌ 2013  
-❌ 2012  
-❌ 2011  
-❌ 2010  
-❌ 2009  
+✔ 2013  
+✔ 2012  
+✔ 2011  
+✔ 2010  
+✔ 2009  
 
 ### UMA ESCOLA
 Para acessar dados de uma única escola, use o código INEP no endpoint:  
