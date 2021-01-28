@@ -17,11 +17,11 @@ Anos disponíveis:
 
 ### UMA ESCOLA
 Para acessar dados de uma única escola, use o código INEP no endpoint:  
-**GET** ```https://mediasenem-com-br.umbler.net/apiNotasEnem/```[**ano**] ```/``` **[codInep]**
+**GET** ```https://api-enem.uc.r.appspot.com/```[**ano**] ```/``` **[codInep]**
 
 **Resposta com sucesso**
 ```
-// GET https://mediasenem-com-br.umbler.net/apiNotasEnem/2019/31291030
+// GET https://api-enem.uc.r.appspot.com/apiNotasEnem/2019/31291030
 
 {
   "encontrado": true,
@@ -46,7 +46,7 @@ Para acessar dados de uma única escola, use o código INEP no endpoint:
 
 **Resposta com erro**
 ```
-// GET https://mediasenem-com-br.umbler.net/apiNotasEnem/2019/00000000
+// GET https://api-enem.uc.r.appspot.com/2019/00000000
 
 {
   "encontrado": false,
@@ -56,11 +56,11 @@ Para acessar dados de uma única escola, use o código INEP no endpoint:
 
 ### TODAS ESCOLAS DE UM ESTADO
 Para acessar os dados de todas as escolas de um estado, use:  
-**GET** ```https://mediasenem-com-br.umbler.net/apiNotasEnem/```[**ano**] ```/estado/``` **[siglaEstado]**
+**GET** ```https://api-enem.uc.r.appspot.com/```[**ano**] ```/estado/``` **[siglaEstado]**
 
 **Resposta com sucesso**
 ```
-// GET https://mediasenem-com-br.umbler.net/apiNotasEnem/2019/estado/GO
+// GET https://api-enem.uc.r.appspot.com/2019/estado/GO
 
 {
   "encontrado": true,
@@ -104,7 +104,7 @@ Para acessar os dados de todas as escolas de um estado, use:
 
 **Resposta com erro**
 ```
-// GET https://mediasenem-com-br.umbler.net/apiNotasEnem/2019/estado/GG
+// GET https://api-enem.uc.r.appspot.com/2019/estado/GG
 
 {
   "encontrado": false,
